@@ -1132,3 +1132,22 @@ document.getElementById("trSearch").addEventListener("input", (e) => {
 
 renderTransit();
 setInterval(renderTransit, 30000);
+
+// Mobile card layout: label each cell with its column name from the table header.
+function labelTableCells(table) {
+  const heads = Array.from(table.querySelectorAll("thead th")).map((th) => th.textContent.trim());
+  table.querySelectorAll("tbody tr").forEach((tr) => {
+    Array.from(tr.children).forEach((td, i) => {
+      if (heads[i] && !td.hasAttribute("data-label")) td.setAttribute("data-label", heads[i]);
+    });
+  });
+}
+
+["stockTable", "spkluTable", "spluTable", "bengkelTable", "motorTable", "emTable", "transitTable"].forEach((id) => {
+  const table = document.getElementById(id);
+  const tbody = table && table.querySelector("tbody");
+  if (!tbody) return;
+  labelTableCells(table);
+  new MutationObserver(() => labelTableCells(table)).observe(tbody, { childList: true });
+});
+

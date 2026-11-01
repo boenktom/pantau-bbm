@@ -1,0 +1,12 @@
+node_modules/
+www/
+android/
+vibe_images/
+ios/
+.gradle/
+*.apk
+*.aab
+*.keystore
+*.jks
+.DS_Store
+Thumbs.db
