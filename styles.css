@@ -500,6 +500,7 @@ tbody tr:last-child td { border-bottom: none; }
   .topbar { padding: 10px 14px 12px; gap: 10px; flex-wrap: nowrap; }
   .view-nav { display: none; }
   .brand { gap: 10px; flex: 1; min-width: 0; }
+  .brand > div { min-width: 0; }
   .logo { width: 38px; height: 38px; font-size: 20px; border-radius: 11px; }
   .brand h1 { font-size: 18px; }
   .brand p { font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
